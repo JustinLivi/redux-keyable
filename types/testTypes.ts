@@ -19,3 +19,8 @@ createActionCreator<Params, Action>(({ paramValue }) => ({
   payload: { payloadValue: paramValue },
   meta: { metaValue: paramValue }
 }));
+
+// $ExpectError
+createActionCreator<Params, {}>(({}) => ({
+  type: ACTION_TYPE
+}));
