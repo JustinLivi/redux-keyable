@@ -13,13 +13,13 @@
     "resolveJsonModule": true,
     "lib": ["es2015"],
     "jsx": "preserve",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noEmit": true,
     "baseUrl": ".",
-    "outDir": "./build",
-    "declarationDir": "./types",
-    "paths": {
-      "jest-extended": ["jest-extended"]
-    }
+    "paths": { "redux-keyable": ["."] }
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "exclude": ["**/node_modules/**/*"]
 }

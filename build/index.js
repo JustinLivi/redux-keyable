@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// TypeScript Version: 3.2
 var immer_1 = __importDefault(require("immer"));
 var lodash_1 = require("lodash");
 exports.createActionCreator = function (actionCreator) { return actionCreator; };

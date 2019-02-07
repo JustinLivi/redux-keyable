@@ -1,5 +1,4 @@
-import { FluxStandardAction } from '.';
-import { createActionCreator } from '../build';
+import { createActionCreator, FluxStandardAction } from '.';
 
 describe('createActionCreator', () => {
   it('should return the action creator', () => {

@@ -3,11 +3,21 @@
   "version": "0.1.0",
   "description": "Small typescript redux utility to improve typesafety between action creators and reducers.",
   "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "types": "types",
+  "typesVersions": [
+    {
+      ">=3.2": {
+        "*": [
+          "types/*"
+        ]
+      }
+    }
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "dtslint": "dtslint build"
+    "dtslint": "dtslint types",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -30,20 +40,20 @@
   },
   "homepage": "https://github.com/JustinLivi/redux-keyable#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.120",
     "immer": "^2.0.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",
-    "@types/lodash": "^4.14.120",
-    "@typescript-eslint/eslint-plugin": "^1.2.0",
-    "@typescript-eslint/parser": "^1.2.0",
     "dtslint": "^0.4.2",
-    "eslint": "^5.13.0",
-    "jest": "^24.0.0",
+    "jest": "^23.6.0",
     "jest-extended": "^0.11.1",
     "prettier": "^1.16.4",
     "ts-jest": "^23.10.5",
-    "typescript": "^3.3.1"
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.2.4"
   }
 }
