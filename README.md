@@ -15,6 +15,7 @@ If you're writing in javascript and not typescript, this package has significant
 interface ActionCreatorParams {
   value: string;
 }
+
 // no problems so far
 const actionCreator = ({ value }) => ({
   type: ACTION_TYPE,
@@ -25,10 +26,11 @@ const actionCreator = ({ value }) => ({
 interface State {
   storedValue: string;
 }
+
 // here we have a problem, since our action is the intersection of ALL
 // of our actions. How do we easily type this without resorting to something
 // like https://github.com/piotrwitek/typesafe-actions#with-type-constants?
-const reducer(state: State, action) {
+const reducer = (state: State, action) => {
   // this gets messy fast
 }
 ```
@@ -45,10 +47,12 @@ import {
 
 // flux standard action type
 const ACTION_TYPE = 'ACTION_TYPE';
+
 // flux standard action
 interface Action extends FluxStandardAction<typeof ACTION_TYPE> {
   value: string;
 }
+
 // createActionCreator is a helper method that accepts the parameters of our
 const actionCreator = createActionCreator<{ value: string }, Action>(
   ({ value }) => ({
@@ -60,9 +64,10 @@ const actionCreator = createActionCreator<{ value: string }, Action>(
 interface State {
   storedValue: string;
 }
-// we pass our state type and action type as generic parameters...
-// everything here is clean so far, but how do we ensure only the right
-// action reaches this reducer?
+
+// we pass our state type and action type as generic parameters to createKeyableReducer.
+// we pass our action type and reducer as arguments to the method.
+// our reducer will only ever get called for actions matching our specified type
 const keyableReducer = createKeyableReducer<State, Action>(
   ACTION_TYPE,
   (state, { value }) => ({
@@ -71,10 +76,14 @@ const keyableReducer = createKeyableReducer<State, Action>(
   })
 );
 
-// everything will get handled auto-magically by combineKeyableReducers
+// optionally provide a default state
 const defaultState = {
   storedValue: 'default'
 };
+
+// combine all our keyable reducers acting on this state into one standard
+// redux reducer. This can be used either as our root reducer or passed to
+// utility methods like reduce-reducers
 const reducer = combineKeyableReducers<State>(defaultState)(
   keyableReducer,
   // we can pass additional keyable reducers here that will accept the same

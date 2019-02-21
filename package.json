@@ -4,15 +4,13 @@
   "description": "Small typescript redux utility to improve typesafety between action creators and reducers.",
   "main": "build/index.js",
   "types": "types",
-  "typesVersions": [
-    {
-      ">=3.2": {
-        "*": [
-          "types/*"
-        ]
-      }
+  "typesVersions": {
+    ">=3.3.0-0": {
+      "*": [
+        "types/*"
+      ]
     }
-  ],
+  },
   "scripts": {
     "build": "tsc",
     "test": "jest",

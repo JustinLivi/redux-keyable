@@ -1,4 +1,3 @@
-// TypeScript Version: 3.0
 import { createActionCreator, FluxStandardAction } from 'redux-keyable';
 
 const ACTION_TYPE = 'ACTION_TYPE';
@@ -23,4 +22,9 @@ createActionCreator<Params, Action>(({ paramValue }) => ({
 // $ExpectError
 createActionCreator<Params, {}>(({}) => ({
   type: ACTION_TYPE
+}));
+
+createActionCreator<Params, Action>(({}) => ({
+  // $ExpectError
+  type: 'INVALID'
 }));

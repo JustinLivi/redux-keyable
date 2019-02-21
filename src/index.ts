@@ -14,17 +14,13 @@ export interface FluxStandardAction<
 
 export type ReducerMethod<
   State,
-  ReducerAction extends FluxStandardAction<ActionType> = FluxStandardAction<
-    ActionType
-  >,
+  ReducerAction extends FluxStandardAction<ActionType> = FluxStandardAction,
   ActionType extends string = ReducerAction['type']
 > = (state: Draft<State>, action: ReducerAction) => void | State;
 
 export interface KeyableReducer<
   State,
-  ReducerAction extends FluxStandardAction<ActionType> = FluxStandardAction<
-    ActionType
-  >,
+  ReducerAction extends FluxStandardAction<ActionType> = FluxStandardAction,
   ActionType extends string = ReducerAction['type']
 > {
   type: ActionType;
