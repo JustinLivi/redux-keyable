@@ -14,8 +14,11 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "cover": "jest --coverage",
     "dtslint": "dtslint types",
-    "tslint": "tslint -c tslint.json 'src/**/*.ts'"
+    "tslint": "tslint -c tslint.json 'src/**/*.ts'",
+    "preversion": "npm run cover && npm run dtslint && npm run tslint && npm run build",
+    "postversion": "git push origin master && hub pull-request -m 'Bump version' && git push --tags upstream && npm publish"
   },
   "repository": {
     "type": "git",
@@ -44,8 +47,8 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",
-    "dtslint": "^0.4.2",
-    "jest": "^23.6.0",
+    "dtslint": "^0.4.9",
+    "jest": "^24.1.0",
     "jest-extended": "^0.11.1",
     "prettier": "^1.16.4",
     "ts-jest": "^23.10.5",
