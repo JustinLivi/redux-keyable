@@ -1,4 +1,4 @@
-import { createActionCreator, createKeyableReducer, FluxStandardAction, ReducerMethod } from '.';
+import { combineKeyableReducers, createActionCreator, createKeyableReducer, FluxStandardAction, ReducerMethod } from '.';
 
 const ACTION_TYPE = 'ACTION_TYPE';
 interface Action extends FluxStandardAction<typeof ACTION_TYPE> {
@@ -33,5 +33,11 @@ describe('createKeyableReducer', () => {
       reducer,
       type: ACTION_TYPE
     });
+  });
+});
+
+describe('combineKeyableReducers', () => {
+  it('should return a keyable-reducer combiner', () => {
+    expect(combineKeyableReducers({})).toBeFunction();
   });
 });

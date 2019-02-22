@@ -1,5 +1,4 @@
 // TypeScript Version: 3.2
-import immer, { Draft } from 'immer';
 import { mapValues } from 'lodash';
 
 export interface FluxStandardAction<
@@ -16,7 +15,7 @@ export type ReducerMethod<
   State,
   ReducerAction extends FluxStandardAction<ActionType> = FluxStandardAction,
   ActionType extends string = ReducerAction['type']
-> = (state: Draft<State>, action: ReducerAction) => void | State;
+> = (state: State, action: ReducerAction) => State;
 
 export interface KeyableReducer<
   State,
@@ -59,12 +58,7 @@ export const combineKeyableReducers = <State = never>(defaultState: State) => (
   let newState: State = baseState;
   mapValues(keyableReducers, (reducer: KeyableReducer<State>) => {
     if (reducer.type === action.type) {
-      // tslint:disable-next-line:no-object-literal-type-assertion
-      newState = {
-        ...(immer<State, void | State>(newState, state => {
-          return reducer.reducer(state, action);
-        }) as object)
-      } as State;
+      newState = reducer.reducer(newState, action);
     }
   });
   return newState;

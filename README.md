@@ -76,7 +76,7 @@ const keyableReducer = createKeyableReducer<State, Action>(
   })
 );
 
-// optionally provide a default state
+// provide a default state
 const defaultState = {
   storedValue: 'default'
 };

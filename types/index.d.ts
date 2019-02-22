@@ -1,4 +1,4 @@
-// TypeScript Version: 3.0
+// TypeScript Version: 3.1
 import { Draft } from 'immer';
 
 export interface FluxStandardAction<

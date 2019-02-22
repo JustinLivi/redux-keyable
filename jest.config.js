@@ -9,5 +9,12 @@ module.exports = {
       functions: 90,
       branches: 50
     }
+  },
+  globals: {
+    'ts-jest': {
+      diagnostics: {
+        warnOnly: true
+      }
+    }
   }
 };
