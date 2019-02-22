@@ -53,7 +53,7 @@ interface Action extends FluxStandardAction<typeof ACTION_TYPE> {
   value: string;
 }
 
-// createActionCreator is a helper method that accepts the parameters of our
+// createActionCreator is typing helper identity method
 const actionCreator = createActionCreator<{ value: string }, Action>(
   ({ value }) => ({
     type: ACTION_TYPE,
