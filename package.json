@@ -17,8 +17,8 @@
     "cover": "jest --coverage",
     "dtslint": "dtslint types",
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-    "preversion": "npm run cover && npm run dtslint && npm run tslint && npm run build",
-    "postversion": "git push origin master && hub pull-request -m 'Bump version' && git push --tags upstream && npm publish"
+    "preversion": "npm run cover && npm run dtslint && npm run tslint && npm run build && git add -A && git commit -m 'increment version'",
+    "postversion": "git push origin master && git push --tags origin && npm publish"
   },
   "repository": {
     "type": "git",
