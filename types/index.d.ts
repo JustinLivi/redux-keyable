@@ -1,3 +1,4 @@
+// TypeScript Version: 3.1
 export interface FluxStandardAction<ActionType extends string = any, Payload = any, Meta = any> {
     type: ActionType;
     payload?: Payload;

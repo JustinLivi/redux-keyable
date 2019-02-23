@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// TypeScript Version: 3.2
 var lodash_1 = require("lodash");
 exports.createActionCreator = function (actionCreator) { return actionCreator; };
 exports.createKeyableReducer = function (type, reducer) { return ({
