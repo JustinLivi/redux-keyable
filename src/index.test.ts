@@ -40,4 +40,56 @@ describe('combineKeyableReducers', () => {
   it('should return a keyable-reducer combiner', () => {
     expect(combineKeyableReducers({})).toBeFunction();
   });
+
+  it('should call the reducer whose type matches', () => {
+    const reduce = combineKeyableReducers({});
+    const keyableReducers = [
+      {
+        type: 'ACTION_1',
+        reducer: jest.fn()
+      },
+      {
+        type: 'ACTION_2',
+        reducer: jest.fn()
+      }
+    ];
+    reduce(...keyableReducers)(
+      {
+        provided: 'value'
+      },
+      {
+        type: 'ACTION_1'
+      }
+    );
+    expect(keyableReducers[0].reducer).toBeCalledWith(
+      {
+        provided: 'value'
+      },
+      {
+        type: 'ACTION_1'
+      }
+    );
+    expect(keyableReducers[1].reducer).not.toBeCalled();
+  });
+
+  it('should utilize default state', () => {
+    const reduce = combineKeyableReducers({
+      defaultState: true
+    });
+    const reducer = jest.fn();
+    reduce({
+      type: 'ACTION_1',
+      reducer
+    })(undefined, {
+      type: 'ACTION_1'
+    });
+    expect(reducer).toBeCalledWith(
+      {
+        defaultState: true
+      },
+      {
+        type: 'ACTION_1'
+      }
+    );
+  });
 });
