@@ -1,4 +1,3 @@
-// TypeScript Version: 3.2
 import { mapValues } from 'lodash';
 
 export interface FluxStandardAction<
