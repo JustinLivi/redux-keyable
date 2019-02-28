@@ -13,7 +13,8 @@ module.exports = {
   globals: {
     'ts-jest': {
       diagnostics: {
-        warnOnly: true
+        // match any file except tests
+        pathRegex: '^((?!\\.test\\.ts).)*$'
       }
     }
   }
