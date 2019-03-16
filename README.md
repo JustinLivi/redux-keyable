@@ -1,16 +1,10 @@
 # redux-keyable
 
-`redux-keyable` provides a few simple types and helper methods to make your [redux](https://redux.js.org) code more type-safe.
-
-If you're writing in javascript and not typescript, this package has significantly less value.
+> Because type-safe redux should be easier.
 
 # Installation
 
 `npm i -s redux-keyable`
-
-# Why?
-
-Can writing type-safe redux applications be cleaner and easier?
 
 ### Problem
 
