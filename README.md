@@ -1,5 +1,7 @@
 # redux-keyable
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JustinLivi/redux-keyable.svg)](https://greenkeeper.io/)
+
 > Because type-safe redux should be easier.
 
 # Installation
