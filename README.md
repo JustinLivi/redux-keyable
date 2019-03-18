@@ -1,5 +1,10 @@
 # redux-keyable
 
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/justinlivi/redux-keyable.svg)](https://gitlab.com/justinlivi/redux-keyable/pipelines)
+[![Coverage Status](https://coveralls.io/repos/gitlab/justinlivi/redux-keyable/badge.svg?branch=master)](https://coveralls.io/gitlab/justinlivi/redux-keyable?branch=master)
+[![David](https://img.shields.io/david/justinlivi/redux-keyable.svg)](https://github.com/JustinLivi/redux-keyable/blob/master/package.json)
+[![NPM](https://img.shields.io/npm/l/redux-keyable.svg)](https://www.npmjs.com/package/redux-keyable)
+[![npm](https://img.shields.io/npm/v/redux-keyable.svg)](https://www.npmjs.com/package/redux-keyable)
 [![Greenkeeper badge](https://badges.greenkeeper.io/JustinLivi/redux-keyable.svg)](https://greenkeeper.io/)
 
 > Because type-safe redux should be easier.
