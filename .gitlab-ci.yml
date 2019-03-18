@@ -14,17 +14,3 @@ test_10:
     - npm run cover
   tags:
     - docker
-
-test_8:
-  image: node:8
-  stage: test
-  cache:
-    key: node_modules
-    policy: pull
-    paths:
-      - node_modules
-  script:
-    - npm install
-    - npm run cover
-  tags:
-    - docker
