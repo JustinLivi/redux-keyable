@@ -1,3 +1,6 @@
+// tslint:disable-next-line:no-implicit-dependencies
+import 'jest-extended';
+
 import { combineKeyableReducers, createActionCreator, createKeyableReducer, FluxStandardAction, ReducerMethod } from '.';
 
 const ACTION_TYPE = 'ACTION_TYPE';
@@ -70,6 +73,30 @@ describe('combineKeyableReducers', () => {
       }
     );
     expect(keyableReducers[1].reducer).not.toBeCalled();
+  });
+
+  it('should handle duplicate type matches', () => {
+    const reduce = combineKeyableReducers({});
+    const keyableReducers = [
+      {
+        type: 'ACTION_1',
+        reducer: jest.fn()
+      },
+      {
+        type: 'ACTION_1',
+        reducer: jest.fn()
+      }
+    ];
+    reduce(...keyableReducers)(
+      {
+        provided: 'value'
+      },
+      {
+        type: 'ACTION_1'
+      }
+    );
+    expect(keyableReducers[0].reducer).toBeCalled();
+    expect(keyableReducers[1].reducer).toBeCalled();
   });
 
   it('should utilize default state', () => {

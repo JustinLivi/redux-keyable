@@ -1,4 +1,4 @@
-import { mapValues } from 'lodash';
+import { forEach, isArray, reduce, union } from 'lodash';
 
 export interface FluxStandardAction<
   ActionType extends string = any,
@@ -52,13 +52,24 @@ export const createKeyableReducer = <
 });
 
 export const combineKeyableReducers = <State = never>(defaultState: State) => (
-  ...keyableReducers: Array<KeyableReducer<State, any, any>>
-) => (baseState: State = defaultState, action: FluxStandardAction): State => {
-  let newState: State = baseState;
-  mapValues(keyableReducers, (reducer: KeyableReducer<State>) => {
-    if (reducer.type === action.type) {
-      newState = reducer.reducer(newState, action);
+  ...keyableReducers: Array<KeyableReducer<State>>
+) => {
+  const defaultAccumulator: { [type: string]: Array<ReducerMethod<State>> } = {};
+  const reducerMap = reduce(keyableReducers, (accumulator, { type, reducer }) => !isArray(accumulator[type]) ? {
+    ...accumulator,
+    [type]: [reducer]
+  } : {
+    ...accumulator,
+    [type]: union(accumulator[type], [reducer])
+  }, defaultAccumulator);
+  return (baseState: State = defaultState, action: FluxStandardAction): State => {
+    let newState: State = baseState;
+    const keyedReducers = reducerMap[action.type];
+    if (isArray(keyedReducers)) {
+      forEach(keyedReducers, reducer => {
+        newState = reducer(newState, action);
+      });
     }
-  });
-  return newState;
+    return newState;
+  };
 };
