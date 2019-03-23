@@ -15,7 +15,7 @@
     "build": "tsc && ts-node ./scripts/addHeader.ts",
     "test": "jest --coverage && npm run tslint",
     "watch": "jest --watch",
-    "cover": "jest --coverage",
+    "cover": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "dtslint": "dtslint types",
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "preversion": "npm run build && npm run dtslint && git add -A",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@types/fs-extra": "^5.0.5",
     "@types/jest": "^24.0.0",
+    "coveralls": "^3.0.3",
     "dtslint": "^0.5.5",
     "fs-extra": "^7.0.1",
     "jest": "^24.1.0",
