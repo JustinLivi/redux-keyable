@@ -15,4 +15,4 @@ export declare const createKeyableReducer: <State = never, ReducerAction extends
     reducer: ReducerMethod<State, ReducerAction, ReducerAction["type"]>;
     type: ActionType;
 };
-export declare const combineKeyableReducers: <State = never>(defaultState: State) => (...keyableReducers: KeyableReducer<State, any, any>[]) => (baseState: State | undefined, action: FluxStandardAction<any, any, any>) => State;
+export declare const combineKeyableReducers: <State = never>(defaultState: State) => (...keyableReducers: KeyableReducer<State, FluxStandardAction<any, any, any>, any>[]) => (baseState: State | undefined, action: FluxStandardAction<any, any, any>) => State;
