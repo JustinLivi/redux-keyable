@@ -1,24 +1,18 @@
 import { forEach, isArray, reduce, union } from 'lodash';
 
-export interface FluxStandardAction<
-  ActionType extends string = any,
-  Payload = any,
-  Meta = any
-> {
+export interface FluxStandardAction<ActionType extends string = any> {
   type: ActionType;
-  payload?: Payload;
-  meta?: Meta;
 }
 
 export type ReducerMethod<
   State,
-  ReducerAction extends FluxStandardAction<ActionType> = FluxStandardAction,
+  ReducerAction extends FluxStandardAction<ActionType> = any,
   ActionType extends string = ReducerAction['type']
 > = (state: State, action: ReducerAction) => State;
 
 export interface KeyableReducer<
   State,
-  ReducerAction extends FluxStandardAction<ActionType> = FluxStandardAction,
+  ReducerAction extends FluxStandardAction = any,
   ActionType extends string = ReducerAction['type']
 > {
   type: ActionType;
@@ -32,37 +26,49 @@ export type ActionCreator<
 > = (params: Params) => A;
 
 export const createActionCreator = <
-  Params = never,
-  A extends FluxStandardAction<ActionType> = never,
+  Params,
+  A extends FluxStandardAction<ActionType>,
   ActionType extends string = A['type']
 >(
   actionCreator: ActionCreator<Params, A, ActionType>
 ) => actionCreator;
 
 export const createKeyableReducer = <
-  State = never,
-  ReducerAction extends FluxStandardAction<ActionType> = never,
+  State,
+  ReducerAction extends FluxStandardAction<ActionType>,
   ActionType extends string = ReducerAction['type']
 >(
   type: ActionType,
   reducer: ReducerMethod<State, ReducerAction>
-) => ({
+): KeyableReducer<State, ReducerAction, ActionType> => ({
   reducer,
   type
 });
 
-export const combineKeyableReducers = <State = never>(defaultState: State) => (
+export const combineKeyableReducers = <State>(defaultState: State) => (
   ...keyableReducers: Array<KeyableReducer<State>>
 ) => {
-  const defaultAccumulator: { [type: string]: Array<ReducerMethod<State>> } = {};
-  const reducerMap = reduce(keyableReducers, (accumulator, { type, reducer }) => !isArray(accumulator[type]) ? {
-    ...accumulator,
-    [type]: [reducer]
-  } : {
-    ...accumulator,
-    [type]: union(accumulator[type], [reducer])
-  }, defaultAccumulator);
-  return (baseState: State = defaultState, action: FluxStandardAction): State => {
+  const defaultAccumulator: {
+    [type: string]: Array<ReducerMethod<State>>;
+  } = {};
+  const reducerMap = reduce(
+    keyableReducers,
+    (accumulator, { type, reducer }) =>
+      !isArray(accumulator[type])
+        ? {
+            ...accumulator,
+            [type]: [reducer]
+          }
+        : {
+            ...accumulator,
+            [type]: union(accumulator[type], [reducer])
+          },
+    defaultAccumulator
+  );
+  return (
+    baseState: State = defaultState,
+    action: FluxStandardAction
+  ): State => {
     let newState: State = baseState;
     const keyedReducers = reducerMap[action.type];
     if (isArray(keyedReducers)) {
