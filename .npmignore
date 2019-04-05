@@ -43,3 +43,6 @@ src
 jest.config.js
 tsconfig.json
 tslint.json
+
+# scripts
+scripts
