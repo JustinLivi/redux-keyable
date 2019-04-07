@@ -13,7 +13,9 @@
 
 `npm i -s redux-keyable`
 
-### Problem
+# Why redux-keyable?
+
+## Problem
 
 Building an action creator in a type-safe manner is straight forward...
 
@@ -130,3 +132,60 @@ const reducer = combineKeyableReducers<State>(defaultState)(
   reducerNotShownInExample
 );
 ```
+
+# Basic Usage
+
+Create our action interface and our action creator.
+
+```typescript
+// changeDetailsAction.ts
+import { createActionCreator, FluxStandardAction } from 'redux-keyable';
+
+export interface DetailsUpdates {
+  address: string;
+  fullname: string;
+}
+
+export const CHANGE_DETAILS = 'CHANGE_DETAILS';
+
+export interface ChangeDetailsAction
+  extends FluxStandardAction<typeof CHANGE_DETAILS> {
+  payload: DetailsUpdates;
+}
+
+export const changeDetails = createActionCreator<
+  DetailsUpdates,
+  ChangeDetailsAction
+>(payload => ({
+  payload,
+  type: CHANGE_DETAILS
+}));
+```
+
+Create our keyable reducer and our standard root reducer.
+
+```typescript
+// changeDetailsReducer.ts
+import { combineKeyableReducers, createKeyableReducer } from 'redux-keyable';
+import { CHANGE_DETAILS, ChangeDetailsAction } from '../changeDetailsAction';
+import { initialState, State } from '../stateDefinition';
+
+export const changeDetailsReducer = createKeyableReducer<
+  State,
+  ChangeDetailsAction
+>(CHANGE_DETAILS, (state, { payload }) => ({
+  ...state,
+  user: {
+    ...state.user,
+    ...payload
+  }
+}));
+
+export const updateDetailsStandardRootReducer = combineKeyableReducers<State>(
+  initialState
+)(changeDetailsReducer);
+```
+
+# License
+
+Licensed under [MIT](https://github.com/JustinLivi/redux-keyable/blob/master/LICENSE)
