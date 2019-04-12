@@ -15,7 +15,7 @@
     "build": "tsc && ts-node ./scripts/addHeader.ts",
     "test": "jest --coverage && npm run tslint && npm run dtslint",
     "watch": "jest --watch",
-    "cover": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "dtslint": "npm run build && dtslint types; git checkout build && git checkout types/index.d.ts",
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "preversion": "npm run build && git add -A",
