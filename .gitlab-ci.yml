@@ -12,7 +12,7 @@ test:
     paths:
       - node_modules
   script:
-    - npm install
+    - npm ci
     - npm test
   tags:
     - docker
@@ -33,7 +33,7 @@ coveralls:
     paths:
       - node_modules
   script:
-    - npm install
+    - npm ci
     - npm run coveralls
   tags:
     - docker
@@ -54,7 +54,7 @@ release:
     paths:
       - node_modules
   script:
-    - npm install
+    - npm ci
     - git checkout master
     - git merge origin/dev --no-edit
     - git remote add upstream "$UPSTREAM"
