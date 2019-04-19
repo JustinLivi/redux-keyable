@@ -1,6 +1,6 @@
 {
   "name": "redux-keyable",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Small typescript redux utility to improve typesafety between action creators and reducers.",
   "main": "build/index.js",
   "types": "types",

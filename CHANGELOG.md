@@ -1,3 +1,13 @@
+## [0.2.4](https://github.com/JustinLivi/redux-keyable/compare/v0.2.3...v0.2.4) (2019-04-19)
+
+
+### Build
+
+* Add missing .npmrc-deploy (refs #16) ([9e3cda7deb70f5e9aaabee9860643aaad6787843](https://github.com/JustinLivi/redux-keyable/commit/9e3cda7deb70f5e9aaabee9860643aaad6787843)), closes [#16](https://github.com/JustinLivi/redux-keyable/issues/16)
+* Configure git earlier in CD (refs #16) ([e6ec7a34d0826f5fd13873c421179bdebaf19846](https://github.com/JustinLivi/redux-keyable/commit/e6ec7a34d0826f5fd13873c421179bdebaf19846)), closes [#16](https://github.com/JustinLivi/redux-keyable/issues/16)
+
+
+
 ## [0.2.3](https://github.com/JustinLivi/redux-keyable/compare/v0.2.2...v0.2.3) (2019-04-19)
 
 
