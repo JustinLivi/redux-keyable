@@ -1,8 +1,9 @@
 stages:
   - test
   - cover
+  - release
 
-test_10:
+test:
   image: node:10
   stage: test
   cache:
@@ -22,8 +23,10 @@ test_10:
 coveralls:
   image: node:10
   dependencies:
-    - test_10
+    - test
   stage: cover
+  only:
+    - dev
   cache:
     key: node_modules
     policy: pull
@@ -37,3 +40,30 @@ coveralls:
   artifacts:
     paths:
       - coverage
+
+release:
+  image: node:10
+  dependencies:
+    - coveralls
+  stage: release
+  only:
+    - dev
+  cache:
+    key: node_modules
+    policy: pull
+    paths:
+      - node_modules
+  script:
+    - npm install
+    - git checkout master
+    - git merge origin/dev --no-edit
+    - git remote add upstream "$UPSTREAM"
+    - git config user.email "$GITLAB_USER_EMAIL"
+    - git config user.name "Justin Livi"
+    - npm run bump
+    - git push upstream master
+    - git push upstream --tags
+    - mv .npmrc-deploy .npmrc
+    - npm publish
+  tags:
+    - docker
