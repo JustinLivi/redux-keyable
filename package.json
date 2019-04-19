@@ -18,8 +18,8 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "dtslint": "npm run build && dtslint types; git checkout build && git checkout types/index.d.ts",
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-    "preversion": "npm run build && git add -A",
-    "release": "np"
+    "version": "npm run build && conventional-changelog -p eslint -i CHANGELOG.md -s -r 0 && git add -A",
+    "bump": "npm version --unsafe-perm $(conventional-recommended-bump -p eslint)"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,9 @@
   "devDependencies": {
     "@types/fs-extra": "^5.0.5",
     "@types/jest": "^24.0.0",
+    "conventional-changelog-cli": "^2.0.12",
+    "conventional-changelog-eslint": "^3.0.1",
+    "conventional-recommended-bump": "^4.1.1",
     "coveralls": "^3.0.3",
     "dtslint": "^0.6.0",
     "fs-extra": "^7.0.1",
