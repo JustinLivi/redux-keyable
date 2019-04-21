@@ -1,3 +1,20 @@
+## [0.2.5](https://github.com/JustinLivi/redux-keyable/compare/v0.2.4...v0.2.5) (2019-04-21)
+
+
+### Build
+
+* Config greenkeeper commit messages (fixes #44) ([a4b8b417c71ee1a1c7d3e9018a6a561a714dce5c](https://github.com/JustinLivi/redux-keyable/commit/a4b8b417c71ee1a1c7d3e9018a6a561a714dce5c)), closes [#44](https://github.com/JustinLivi/redux-keyable/issues/44)
+
+### Fix
+
+* Pin version numbers (fixes #42) ([a515c62d3f3ab8223940af1a26a19ce3baca18fe](https://github.com/JustinLivi/redux-keyable/commit/a515c62d3f3ab8223940af1a26a19ce3baca18fe)), closes [#42](https://github.com/JustinLivi/redux-keyable/issues/42)
+
+### Upgrade
+
+* Update dtslint to version 0.7.0 ([b86f00c5eab17aecf3524467a009248ec9f11d65](https://github.com/JustinLivi/redux-keyable/commit/b86f00c5eab17aecf3524467a009248ec9f11d65))
+
+
+
 ## [0.2.4](https://github.com/JustinLivi/redux-keyable/compare/v0.2.3...v0.2.4) (2019-04-19)
 
 
