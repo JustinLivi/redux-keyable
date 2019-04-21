@@ -26,7 +26,8 @@ exports.combineKeyableReducers = function (defaultState) { return function () {
     var reducerMap = lodash_1.reduce(keyableReducers, function (accumulator, _a) {
         var type = _a.type, reducer = _a.reducer;
         var _b, _c;
-        return !lodash_1.isArray(accumulator[type]) ? __assign({}, accumulator, (_b = {}, _b[type] = [reducer], _b)) : __assign({}, accumulator, (_c = {}, _c[type] = lodash_1.union(accumulator[type], [reducer]), _c));
+        return !lodash_1.isArray(accumulator[type])
+            ? __assign({}, accumulator, (_b = {}, _b[type] = [reducer], _b)) : __assign({}, accumulator, (_c = {}, _c[type] = lodash_1.union(accumulator[type], [reducer]), _c));
     }, defaultAccumulator);
     return function (baseState, action) {
         if (baseState === void 0) { baseState = defaultState; }
