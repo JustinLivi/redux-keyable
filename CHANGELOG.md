@@ -1,3 +1,12 @@
+## [0.2.8](https://github.com/JustinLivi/redux-keyable/compare/v0.2.7...v0.2.8) (2019-04-23)
+
+
+### Build
+
+* Resolve CD git issues (refs #46) ([e14021f5dd0a0952f15d8098df178a3aba3f5bc8](https://github.com/JustinLivi/redux-keyable/commit/e14021f5dd0a0952f15d8098df178a3aba3f5bc8)), closes [#46](https://github.com/JustinLivi/redux-keyable/issues/46)
+
+
+
 ## [0.2.7](https://github.com/JustinLivi/redux-keyable/compare/v0.2.6...v0.2.7) (2019-04-23)
 
 
