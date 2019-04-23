@@ -1,3 +1,13 @@
+## [0.2.7](https://github.com/JustinLivi/redux-keyable/compare/v0.2.6...v0.2.7) (2019-04-23)
+
+
+### Build
+
+* Further filter release triggers (refs #46) ([54cc82a362922ec00b1db552b78ebde77af32ef0](https://github.com/JustinLivi/redux-keyable/commit/54cc82a362922ec00b1db552b78ebde77af32ef0)), closes [#46](https://github.com/JustinLivi/redux-keyable/issues/46)
+* Resolve git pull issue (refs #46) ([434282f6adf57302dd2740740f2e85dac75599a5](https://github.com/JustinLivi/redux-keyable/commit/434282f6adf57302dd2740740f2e85dac75599a5)), closes [#46](https://github.com/JustinLivi/redux-keyable/issues/46)
+
+
+
 ## [0.2.6](https://github.com/JustinLivi/redux-keyable/compare/v0.2.5...v0.2.6) (2019-04-23)
 
 
