@@ -1,3 +1,14 @@
+## [0.2.6](https://github.com/JustinLivi/redux-keyable/compare/v0.2.5...v0.2.6) (2019-04-23)
+
+
+### Build
+
+* Merge back to dev after release (fixes #46) ([ef4f9ee27907197d59c5441fdd24ed9522490438](https://github.com/JustinLivi/redux-keyable/commit/ef4f9ee27907197d59c5441fdd24ed9522490438)), closes [#46](https://github.com/JustinLivi/redux-keyable/issues/46)
+* Only auto-merge into dev ([d2775c7e1e14bb61d08efda75a891c5cde38d46e](https://github.com/JustinLivi/redux-keyable/commit/d2775c7e1e14bb61d08efda75a891c5cde38d46e))
+* Revert test exclusion on master ([3675aa597cd6f8894a352a5084b8d0d851ed5d77](https://github.com/JustinLivi/redux-keyable/commit/3675aa597cd6f8894a352a5084b8d0d851ed5d77))
+
+
+
 ## [0.2.5](https://github.com/JustinLivi/redux-keyable/compare/v0.2.4...v0.2.5) (2019-04-21)
 
 
