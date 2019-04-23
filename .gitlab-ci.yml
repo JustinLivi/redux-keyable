@@ -6,8 +6,6 @@ stages:
 test:
   image: node:10
   stage: test
-  except:
-    - master
   cache:
     key: node_modules
     policy: pull
