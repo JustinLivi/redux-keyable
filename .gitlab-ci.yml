@@ -74,9 +74,9 @@ release:
     - git push upstream --tags
     - mv .npmrc-deploy .npmrc
     - npm publish
-    - git checkout origin/dev
-    - git pull --rebase upstream origin/dev
+    - git checkout dev
+    - git pull --rebase upstream dev
     - git merge master
-    - git push upstream origin/dev
+    - git push upstream dev
   tags:
     - docker
