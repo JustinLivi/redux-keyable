@@ -27,9 +27,13 @@ coveralls:
   stage: cover
   only:
     - dev
+  # don't run coverage when merging release back into dev
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_BEFORE_SHA =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TAG =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TITLE =~ /^\d+.\d+.\d+$/
   cache:
     key: node_modules
     policy: pull
@@ -51,6 +55,7 @@ release:
   stage: release
   only:
     - dev
+  # don't run release again when merging release back into dev
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
@@ -75,8 +80,10 @@ release:
     - mv .npmrc-deploy .npmrc
     - npm publish
     - git checkout dev
+    # unclear on what these changes are or why they're here post-publish
+    - git checkout .
     - git pull --rebase upstream dev
     - git merge master
-    - git push upstream dev
+    - git push --force-with-lease upstream dev
   tags:
     - docker
