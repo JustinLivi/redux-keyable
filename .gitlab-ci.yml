@@ -27,6 +27,9 @@ coveralls:
   stage: cover
   only:
     - dev
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
   cache:
     key: node_modules
     policy: pull
@@ -48,6 +51,9 @@ release:
   stage: release
   only:
     - dev
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
   cache:
     key: node_modules
     policy: pull
@@ -65,5 +71,9 @@ release:
     - git push upstream --tags
     - mv .npmrc-deploy .npmrc
     - npm publish
+    - git checkout origin/dev
+    - git rebase upstream origin/dev
+    - git rebase master
+    - git push upstream origin/dev
   tags:
     - docker
