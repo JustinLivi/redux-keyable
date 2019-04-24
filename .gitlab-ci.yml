@@ -84,6 +84,6 @@ release:
     - git checkout .
     - git pull --rebase upstream dev
     - git merge master
-    - git push --force-with-lease upstream dev
+    - git push --force upstream dev
   tags:
     - docker
