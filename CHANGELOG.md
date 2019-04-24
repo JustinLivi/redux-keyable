@@ -1,3 +1,12 @@
+## [0.2.10](https://github.com/JustinLivi/redux-keyable/compare/v0.2.9...v0.2.10) (2019-04-24)
+
+
+### Build
+
+* Attempt merge to dev via force push (refs #46) ([0883f41339f81d4b554f4bbfd402430764124875](https://github.com/JustinLivi/redux-keyable/commit/0883f41339f81d4b554f4bbfd402430764124875)), closes [#46](https://github.com/JustinLivi/redux-keyable/issues/46)
+
+
+
 ## [0.2.9](https://github.com/JustinLivi/redux-keyable/compare/v0.2.8...v0.2.9) (2019-04-23)
 
 
