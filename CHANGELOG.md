@@ -1,3 +1,12 @@
+## [0.2.12](https://github.com/JustinLivi/redux-keyable/compare/v0.2.11...v0.2.12) (2019-04-25)
+
+
+### Build
+
+* Add separate sync stage ([358b7534757578ca852453d35dc01159f9360882](https://github.com/JustinLivi/redux-keyable/commit/358b7534757578ca852453d35dc01159f9360882))
+
+
+
 ## [0.2.11](https://github.com/JustinLivi/redux-keyable/compare/v0.2.10...v0.2.11) (2019-04-25)
 
 
