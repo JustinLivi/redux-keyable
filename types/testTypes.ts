@@ -7,8 +7,7 @@ interface Payload {
 interface Meta {
   metaValue: string;
 }
-interface Action
-  extends FluxStandardAction<typeof ACTION_TYPE, Payload, Meta> {}
+interface Action extends FluxStandardAction<typeof ACTION_TYPE> {}
 interface Params {
   paramValue: string;
 }

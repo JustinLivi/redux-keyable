@@ -1,16 +1,105 @@
 stages:
   - test
+  - cover
+  - release
+  - sync
 
-test_10:
+test:
   image: node:10
   stage: test
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_BEFORE_SHA =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TAG =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TITLE =~ /^\d+.\d+.\d+$/
   cache:
     key: node_modules
     policy: pull
     paths:
       - node_modules
   script:
-    - npm install
-    - npm run cover
+    - npm ci
+    - npm test
   tags:
     - docker
+  artifacts:
+    paths:
+      - coverage
+
+coveralls:
+  image: node:10
+  dependencies:
+    - test
+  stage: cover
+  only:
+    - master
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_BEFORE_SHA =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TAG =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TITLE =~ /^\d+.\d+.\d+$/
+  cache:
+    key: node_modules
+    policy: pull
+    paths:
+      - node_modules
+  script:
+    - npm ci
+    - npm run coveralls
+  tags:
+    - docker
+  artifacts:
+    paths:
+      - coverage
+
+release:
+  image: node:10
+  dependencies:
+    - coveralls
+  stage: release
+  only:
+    - master
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_BEFORE_SHA =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TAG =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TITLE =~ /^\d+.\d+.\d+$/
+  cache:
+    key: node_modules
+    policy: pull
+    paths:
+      - node_modules
+  script:
+    - npm ci
+    - git remote add upstream "$UPSTREAM"
+    - git config user.email "$GITLAB_USER_EMAIL"
+    - git config user.name "$GITLAB_USER_NAME"
+    - npm run bump
+    - git push upstream HEAD:master
+    - git push upstream --tags
+    - mv .npmrc-deploy .npmrc
+    - npm publish
+  tags:
+    - docker
+
+sync:
+  stage: sync
+  only:
+    refs:
+      - master
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_BEFORE_SHA =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TAG =~ /^\d+.\d+.\d+$/
+      - $CI_COMMIT_TITLE =~ /^\d+.\d+.\d+$/
+  script:
+    - git remote add upstream "$UPSTREAM"
+    - git config user.email "$GITLAB_USER_EMAIL"
+    - git config user.name "$GITLAB_USER_NAME"
+    - git checkout dev
+    - git pull --rebase upstream dev
+    - git merge origin/master
+    - git push upstream dev
