@@ -1,3 +1,14 @@
+## [0.2.11](https://github.com/JustinLivi/redux-keyable/compare/v0.2.10...v0.2.11) (2019-04-25)
+
+
+### Build
+
+* Attempt push to master fix ([94af940f1b07116b8c0780c08043bee06be425f9](https://github.com/JustinLivi/redux-keyable/commit/94af940f1b07116b8c0780c08043bee06be425f9))
+* Re-add push to dev logic ([f29ed498d76e7f9263f6ae22cff9f1390604cb63](https://github.com/JustinLivi/redux-keyable/commit/f29ed498d76e7f9263f6ae22cff9f1390604cb63))
+* Simplify cd to omit dev branch ([191a36ce98360f7d4c11195b9f85e9fff460f2d7](https://github.com/JustinLivi/redux-keyable/commit/191a36ce98360f7d4c11195b9f85e9fff460f2d7))
+
+
+
 ## [0.2.10](https://github.com/JustinLivi/redux-keyable/compare/v0.2.9...v0.2.10) (2019-04-24)
 
 
