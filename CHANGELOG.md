@@ -1,3 +1,12 @@
+## [0.2.14](https://github.com/JustinLivi/redux-keyable/compare/v0.2.13...v0.2.14) (2019-04-25)
+
+
+### Build
+
+* Attempt to resolve sync stage issues ([7347865bcf2f9832744a4f268d77f79e10fdd98d](https://github.com/JustinLivi/redux-keyable/commit/7347865bcf2f9832744a4f268d77f79e10fdd98d))
+
+
+
 ## [0.2.13](https://github.com/JustinLivi/redux-keyable/compare/v0.2.12...v0.2.13) (2019-04-25)
 
 
