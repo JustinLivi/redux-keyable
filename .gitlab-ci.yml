@@ -7,7 +7,6 @@ stages:
 test:
   image: node:10
   stage: test
-  # don't run tests after release
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
@@ -35,7 +34,6 @@ coveralls:
   stage: cover
   only:
     - master
-  # don't run coverage when merging release back into dev
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
@@ -63,7 +61,6 @@ release:
   stage: release
   only:
     - master
-  # don't run release again when merging release back into dev
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /^\d+.\d+.\d+$/
@@ -104,5 +101,5 @@ sync:
     - git config user.name "$GITLAB_USER_NAME"
     - git checkout dev
     - git pull --rebase upstream dev
-    - git merge HEAD:master
+    - git merge master
     - git push upstream dev
