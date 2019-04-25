@@ -101,5 +101,5 @@ sync:
     - git config user.name "$GITLAB_USER_NAME"
     - git checkout dev
     - git pull --rebase upstream dev
-    - git merge master
+    - git merge origin/master
     - git push upstream dev
