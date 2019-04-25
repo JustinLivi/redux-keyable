@@ -1,3 +1,8 @@
+## [0.2.17](https://github.com/JustinLivi/redux-keyable/compare/v0.2.16...v0.2.17) (2019-04-25)
+
+
+
+
 ## [0.2.16](https://github.com/JustinLivi/redux-keyable/compare/v0.2.15...v0.2.16) (2019-04-25)
 
 
@@ -51,6 +56,13 @@
 * Attempt push to master fix ([94af940f1b07116b8c0780c08043bee06be425f9](https://github.com/JustinLivi/redux-keyable/commit/94af940f1b07116b8c0780c08043bee06be425f9))
 * Re-add push to dev logic ([f29ed498d76e7f9263f6ae22cff9f1390604cb63](https://github.com/JustinLivi/redux-keyable/commit/f29ed498d76e7f9263f6ae22cff9f1390604cb63))
 * Simplify cd to omit dev branch ([191a36ce98360f7d4c11195b9f85e9fff460f2d7](https://github.com/JustinLivi/redux-keyable/commit/191a36ce98360f7d4c11195b9f85e9fff460f2d7))
+
+### Upgrade
+
+* Update conventional-changelog-cli to version 2.0.17 ([025982c5c28145d7c9289bc67ff4b5dace3ec36a](https://github.com/JustinLivi/redux-keyable/commit/025982c5c28145d7c9289bc67ff4b5dace3ec36a))
+* Update dtslint to version 0.7.1 ([38f873fe0f97de852dc9b0413ec04e0ff5d0c215](https://github.com/JustinLivi/redux-keyable/commit/38f873fe0f97de852dc9b0413ec04e0ff5d0c215))
+* Update lockfile package-lock.json ([f29a9f1e549f53dbd58b098537425401c2dc3f7d](https://github.com/JustinLivi/redux-keyable/commit/f29a9f1e549f53dbd58b098537425401c2dc3f7d))
+* Update lockfile package-lock.json ([e1f3acb7e2067951d8da56f154b97b3ac15faaa1](https://github.com/JustinLivi/redux-keyable/commit/e1f3acb7e2067951d8da56f154b97b3ac15faaa1))
 
 
 
@@ -136,6 +148,7 @@
 
 * Add CD pipeline (fixes #16) ([75a3c82c24be9ee2ea64964263aa272908d8f0df](https://github.com/JustinLivi/redux-keyable/commit/75a3c82c24be9ee2ea64964263aa272908d8f0df)), closes [#16](https://github.com/JustinLivi/redux-keyable/issues/16)
 * Add mergify configuration (fixes #27) ([a975f914fe80f96c732219b3724d536685c46510](https://github.com/JustinLivi/redux-keyable/commit/a975f914fe80f96c732219b3724d536685c46510)), closes [#27](https://github.com/JustinLivi/redux-keyable/issues/27)
+* Add type checking to standard tests ([f219cae6604210d27aae49fa3e79c13fb53b53e3](https://github.com/JustinLivi/redux-keyable/commit/f219cae6604210d27aae49fa3e79c13fb53b53e3))
 * Configure mergify to delete head branch (fixes #31) ([a50d8a0ae70a1410ef7c3562f2a1822cf524d5a0](https://github.com/JustinLivi/redux-keyable/commit/a50d8a0ae70a1410ef7c3562f2a1822cf524d5a0)), closes [#31](https://github.com/JustinLivi/redux-keyable/issues/31)
 * Ensure master is always up to date (ref #16) ([0a70db8d74d297090c4a10347a0602a8d46c224e](https://github.com/JustinLivi/redux-keyable/commit/0a70db8d74d297090c4a10347a0602a8d46c224e)), closes [#16](https://github.com/JustinLivi/redux-keyable/issues/16)
 * Ensure test failure break pipeline (fixes #25) ([18e128f63f1cd2a3dafba29dda26cfc9676a3e7f](https://github.com/JustinLivi/redux-keyable/commit/18e128f63f1cd2a3dafba29dda26cfc9676a3e7f)), closes [#25](https://github.com/JustinLivi/redux-keyable/issues/25)
