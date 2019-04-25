@@ -102,6 +102,7 @@ sync:
     - git remote add upstream "$UPSTREAM"
     - git config user.email "$GITLAB_USER_EMAIL"
     - git config user.name "$GITLAB_USER_NAME"
-    - git checkout -t upstream/dev
+    - git checkout dev
+    - git pull --rebase upstream dev
     - git merge upstream/master
-    - git push --force-with-lease upstream dev
+    - git push upstream dev
