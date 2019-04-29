@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "5.0.5",
-    "@types/jest": "24.0.0",
+    "@types/jest": "24.0.12",
     "conventional-changelog-cli": "2.0.17",
     "conventional-changelog-eslint": "3.0.1",
     "conventional-recommended-bump": "4.1.1",
