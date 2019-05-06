@@ -50,7 +50,7 @@
     "@types/jest": "24.0.12",
     "conventional-changelog-cli": "2.0.17",
     "conventional-changelog-eslint": "3.0.1",
-    "conventional-recommended-bump": "4.1.1",
+    "conventional-recommended-bump": "5.0.0",
     "coveralls": "3.0.3",
     "dtslint": "0.7.1",
     "fs-extra": "7.0.1",
