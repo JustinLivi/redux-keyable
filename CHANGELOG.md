@@ -1,3 +1,46 @@
+## [0.2.18](https://github.com/JustinLivi/redux-keyable/compare/v0.2.17...v0.2.18) (2019-07-02)
+
+
+### Fix
+
+* Syncronize package.json and package-lock.json ([0b0ebe4cd2952f8933054277e639c683dc21c2ab](https://github.com/JustinLivi/redux-keyable/commit/0b0ebe4cd2952f8933054277e639c683dc21c2ab))
+
+### Upgrade
+
+* Syncronize package.json and package-lock.json ([c2269463a3b27632001e648534f82885f60ea3b2](https://github.com/JustinLivi/redux-keyable/commit/c2269463a3b27632001e648534f82885f60ea3b2))
+* Update @types/fs-extra to version 5.1.0 ([58203fadc59af52636fd582c6ce6ce2ced4014b5](https://github.com/JustinLivi/redux-keyable/commit/58203fadc59af52636fd582c6ce6ce2ced4014b5))
+* Update @types/fs-extra to version 7.0.0 ([9f6d9c38f308fa72181853aed35b4bcee13c238b](https://github.com/JustinLivi/redux-keyable/commit/9f6d9c38f308fa72181853aed35b4bcee13c238b))
+* Update @types/jest to version 24.0.12 ([8442b78e957486deb9dddda4135e9f2112694cbb](https://github.com/JustinLivi/redux-keyable/commit/8442b78e957486deb9dddda4135e9f2112694cbb))
+* Update @types/jest to version 24.0.13 ([12ce52e48f61b4df2439e063b938115f3bc01c04](https://github.com/JustinLivi/redux-keyable/commit/12ce52e48f61b4df2439e063b938115f3bc01c04))
+* Update @types/jest to version 24.0.15 ([c58bd4dd98c05dc53844de788bb1336e5d82dc30](https://github.com/JustinLivi/redux-keyable/commit/c58bd4dd98c05dc53844de788bb1336e5d82dc30)), closes [#73](https://github.com/JustinLivi/redux-keyable/issues/73)
+* Update @types/lodash to version 4.14.124 ([87db0b67a74a5c7b1a261f17c14bfe79c5a5c52d](https://github.com/JustinLivi/redux-keyable/commit/87db0b67a74a5c7b1a261f17c14bfe79c5a5c52d))
+* Update @types/lodash to version 4.14.135 ([23bf102027c8110b17d6902a50e95c0fafb208c8](https://github.com/JustinLivi/redux-keyable/commit/23bf102027c8110b17d6902a50e95c0fafb208c8))
+* Update conventional-changelog-cli to version 2.0.21 ([d0e4015509138bc677fc107b53ad6abbb6ff521a](https://github.com/JustinLivi/redux-keyable/commit/d0e4015509138bc677fc107b53ad6abbb6ff521a))
+* Update conventional-recommended-bump to version 5.0.0 ([022233e2a290dbb34b3cde0e2f02adea83168a49](https://github.com/JustinLivi/redux-keyable/commit/022233e2a290dbb34b3cde0e2f02adea83168a49))
+* Update coveralls to version 3.0.4 ([0839f8aa60157400f48a029cfee2a43b7228cb5e](https://github.com/JustinLivi/redux-keyable/commit/0839f8aa60157400f48a029cfee2a43b7228cb5e))
+* Update dtslint to version 0.7.2 ([841880f11d8ff594914e3b041b77b0dc3e6115bc](https://github.com/JustinLivi/redux-keyable/commit/841880f11d8ff594914e3b041b77b0dc3e6115bc))
+* Update fs-extra to version 8.0.0 ([3ffcbc66047f0d1dfe399086543f8fa9c04d24d0](https://github.com/JustinLivi/redux-keyable/commit/3ffcbc66047f0d1dfe399086543f8fa9c04d24d0))
+* Update fs-extra to version 8.1.0 ([ab9f659aae8b7e5537a1ac0f4b47ce480d1ee570](https://github.com/JustinLivi/redux-keyable/commit/ab9f659aae8b7e5537a1ac0f4b47ce480d1ee570))
+* Update lockfile package-lock.json ([4d267d43fe34574eea1779d12284932750a1bce1](https://github.com/JustinLivi/redux-keyable/commit/4d267d43fe34574eea1779d12284932750a1bce1))
+* Update lockfile package-lock.json ([3bff5c501bc16c4c7d6eabb24ff1ada3db161a47](https://github.com/JustinLivi/redux-keyable/commit/3bff5c501bc16c4c7d6eabb24ff1ada3db161a47))
+* Update lockfile package-lock.json ([9d2b31952edaf0dd10aea1e6a9707888c4942e32](https://github.com/JustinLivi/redux-keyable/commit/9d2b31952edaf0dd10aea1e6a9707888c4942e32))
+* Update lockfile package-lock.json ([192f3328ad23784ff7b3dcb1963e725316c02527](https://github.com/JustinLivi/redux-keyable/commit/192f3328ad23784ff7b3dcb1963e725316c02527))
+* Update lockfile package-lock.json ([ef93f6ef5977f31ef75d8170123c3581e186dc70](https://github.com/JustinLivi/redux-keyable/commit/ef93f6ef5977f31ef75d8170123c3581e186dc70))
+* Update lockfile package-lock.json ([03bdec03ff078f87b95dd44ab8af41bff38da8bc](https://github.com/JustinLivi/redux-keyable/commit/03bdec03ff078f87b95dd44ab8af41bff38da8bc))
+* Update lockfile package-lock.json ([b2c23da49fe06b1ad8c6cf9aa8de2d2a21e50d28](https://github.com/JustinLivi/redux-keyable/commit/b2c23da49fe06b1ad8c6cf9aa8de2d2a21e50d28))
+* Update lockfile package-lock.json ([f94e3bbfeff5d981cc9b3b3b6e73d3f68303255e](https://github.com/JustinLivi/redux-keyable/commit/f94e3bbfeff5d981cc9b3b3b6e73d3f68303255e))
+* Update lockfile package-lock.json ([0f72114a96e02b43592223eeed1bf69226abfd50](https://github.com/JustinLivi/redux-keyable/commit/0f72114a96e02b43592223eeed1bf69226abfd50))
+* Update lockfile package-lock.json ([326a3da92ced8ebda10303c5b4132c012021bd33](https://github.com/JustinLivi/redux-keyable/commit/326a3da92ced8ebda10303c5b4132c012021bd33))
+* Update lockfile package-lock.json ([57d351397677af89a9909c0b9512c031de7769f8](https://github.com/JustinLivi/redux-keyable/commit/57d351397677af89a9909c0b9512c031de7769f8))
+* Update lockfile package-lock.json ([02badb28b483bcc4d4f651380653d86d174ef554](https://github.com/JustinLivi/redux-keyable/commit/02badb28b483bcc4d4f651380653d86d174ef554))
+* Update lockfile package-lock.json ([c9be0ead57edc1b962066952b5bcd9ff7e19d50d](https://github.com/JustinLivi/redux-keyable/commit/c9be0ead57edc1b962066952b5bcd9ff7e19d50d))
+* Update lockfile package-lock.json ([01a48a59859ac4fa21bafdebd6b637b271191533](https://github.com/JustinLivi/redux-keyable/commit/01a48a59859ac4fa21bafdebd6b637b271191533))
+* Update lockfile package-lock.json ([1a97b7cd4faa544162a530365dba6815b24e0c1d](https://github.com/JustinLivi/redux-keyable/commit/1a97b7cd4faa544162a530365dba6815b24e0c1d))
+* Update prettier to version 1.18.0 ([9767b96d45bdfe2621fe67661833596d70af3948](https://github.com/JustinLivi/redux-keyable/commit/9767b96d45bdfe2621fe67661833596d70af3948))
+* Update ts-node to version 8.1.1 ([7ddadf8c023381bdfa6f24e4878a369178247d58](https://github.com/JustinLivi/redux-keyable/commit/7ddadf8c023381bdfa6f24e4878a369178247d58))
+
+
+
 ## [0.2.17](https://github.com/JustinLivi/redux-keyable/compare/v0.2.16...v0.2.17) (2019-04-25)
 
 
