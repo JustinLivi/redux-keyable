@@ -43,7 +43,7 @@
   "homepage": "https://github.com/JustinLivi/redux-keyable#readme",
   "dependencies": {
     "@types/lodash": "4.14.135",
-    "lodash": "4.17.11"
+    "lodash": "4.17.12"
   },
   "devDependencies": {
     "@types/jest": "24.0.15",
