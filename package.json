@@ -50,7 +50,7 @@
     "@types/fs-extra": "7.0.0",
     "conventional-changelog-cli": "2.0.21",
     "conventional-changelog-eslint": "3.0.1",
-    "conventional-recommended-bump": "5.0.0",
+    "conventional-recommended-bump": "6.0.0",
     "coveralls": "3.0.3",
     "dtslint": "0.7.2",
     "fs-extra": "8.1.0",
