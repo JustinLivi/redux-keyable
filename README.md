@@ -5,7 +5,6 @@
 [![David](https://img.shields.io/david/justinlivi/redux-keyable.svg)](https://github.com/JustinLivi/redux-keyable/blob/master/package.json)
 [![NPM](https://img.shields.io/npm/l/redux-keyable.svg)](https://www.npmjs.com/package/redux-keyable)
 [![npm](https://img.shields.io/npm/v/redux-keyable.svg)](https://www.npmjs.com/package/redux-keyable)
-[![Greenkeeper badge](https://badges.greenkeeper.io/JustinLivi/redux-keyable.svg)](https://greenkeeper.io/)
 [![npm type definitions](https://img.shields.io/npm/types/redux-keyable.svg)](https://github.com/JustinLivi/redux-keyable/blob/master/package.json)
 
 > Because type-safe redux should be easier.
