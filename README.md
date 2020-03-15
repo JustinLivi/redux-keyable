@@ -10,6 +10,10 @@
 
 > Because type-safe redux should be easier.
 
+# Deprecation
+
+This repo is deprecated in favor of [ts-action](https://github.com/cartant/ts-action) which solves the same problem and has wider adoption, support, and a cleaner interface.
+
 # Installation
 
 `npm i -s redux-keyable`
